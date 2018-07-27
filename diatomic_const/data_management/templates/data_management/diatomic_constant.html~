@@ -1,0 +1,7 @@
+{{ Diatomic_constant }} 
+
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+    <a href="/data_management/Diatomic_constants" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+</form>

@@ -1,0 +1,9 @@
+{% if source_type_list %}
+    <ul>
+    {% for source_type in source_type_list %}
+        <li><a href="/data_management/source_types/{{ source_type.source_type_id }}/">{{ source_type }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No source types available.</p>
+{% endif %}

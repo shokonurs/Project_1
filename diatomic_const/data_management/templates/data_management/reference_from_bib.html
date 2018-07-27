@@ -1,0 +1,22 @@
+{% extends 'data_management/base.html' %}
+
+{% block content %}
+{% if reference_publication %}
+<a href="/data_management/">home</a> > <a href="/data_management/Reference_publications">Reference publications</a> > {{ reference_publication }}
+{% else %}
+<a href="/data_management/">home</a> > <a href="/data_management/Reference_publications">Reference publications</a> > New
+{% endif %}
+<hr>
+
+
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+<hr>
+    {{ form.message }}
+<hr>
+    <button type="submit" class="save btn btn-default">Save</button>
+    <a href="/data_management/Reference_publications" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+
+</form>
+
+{% endblock %}

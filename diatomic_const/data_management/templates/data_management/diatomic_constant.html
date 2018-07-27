@@ -1,0 +1,17 @@
+{% extends 'data_management/base.html' %}
+
+{% block content %}
+{% if diatomic_constant %}
+<a href="/data_management/">home</a> > <a href="/data_management/Diatomic_constants">Diatomic constants</a> > {{ diatomic_constant }}
+{% else %}
+<a href="/data_management/">home</a> > <a href="/data_management/Diatomic_constants">Diatomic constants</a> > New
+{% endif %}
+<hr>
+
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+    <a href="/data_management/Diatomic_constants" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+</form>
+
+{% endblock %}

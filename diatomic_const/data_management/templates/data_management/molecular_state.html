@@ -1,0 +1,18 @@
+{% extends 'data_management/base.html' %}
+
+{% block content %}
+
+{% if molecular_state %}
+<a href="/data_management/">home</a> > <a href="/data_management/Molecular_states">Molecular states</a> > {{ molecular_state }}
+{% else %}
+<a href="/data_management/">home</a> > <a href="/data_management/Molecular_states">Molecular states</a> > New
+{% endif %}
+<hr>
+
+
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+    <a href="/data_management/Molecular_states" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% if molecular_state_list %}
+    <ul>
+    {% for molecular_state in molecular_state_list %}
+        <li><a href="/data_management/molecular_states/{{ molecular_state.molecular_state_id }}/">{{ molecular_state.symbol }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No molecular states available.</p>
+{% endif %}

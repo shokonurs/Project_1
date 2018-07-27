@@ -1,0 +1,24 @@
+[2018-06-18 18:54:34 +0000] [13937] [INFO] Starting gunicorn 19.7.1
+[2018-06-18 18:54:34 +0000] [13937] [INFO] Listening at: http://127.0.0.1:8000 (13937)
+[2018-06-18 18:54:34 +0000] [13937] [INFO] Using worker: sync
+[2018-06-18 18:54:34 +0000] [13942] [INFO] Booting worker with pid: 13942
+[2018-06-18 18:54:34 +0000] [13942] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/srv/www/diatomic_env/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/srv/www/diatomic_env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/srv/www/diatomic_env/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/srv/www/diatomic_env/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/srv/www/diatomic_env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/srv/www/diatomic_env/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/srv/www/diatomic_env/lib/python2.7/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+ImportError: No module named diatomic_const
+[2018-06-18 18:54:34 +0000] [13942] [INFO] Worker exiting (pid: 13942)
+[2018-06-18 18:54:34 +0000] [13937] [INFO] Shutting down: Master
+[2018-06-18 18:54:34 +0000] [13937] [INFO] Reason: Worker failed to boot.

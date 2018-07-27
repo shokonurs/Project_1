@@ -1,0 +1,20 @@
+{% extends 'data_management/base.html' %}
+
+{% block content %}
+<a href="/data_management/">home</a> > <a href="/data_management/Diatomic_constants">Diatomic constants</a>
+<hr>
+
+
+{% if diatomic_constant_list %}
+    <ul>
+    <li><a href="/data_management/Diatomic_constants/new/">Add new</a></li> 
+    {% for diatomic_constant in diatomic_constant_list %}
+        <li><a href="/data_management/Diatomic_constants/{{ diatomic_constant.diatomic_constant_id }}/">{{ diatomic_constant }}</a></li>
+    {% endfor %}
+    <li><a href="/data_management/Diatomic_constants/new/">Add new</a></li> 
+    </ul>
+{% else %}
+    <p>No diatomic constants available.</p>
+{% endif %}
+
+{% endblock %}

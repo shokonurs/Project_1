@@ -1,0 +1,2 @@
+data_management is a Django app
+diatomic_const is a Django project

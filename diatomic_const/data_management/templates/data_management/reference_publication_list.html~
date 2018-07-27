@@ -1,0 +1,9 @@
+{% if reference_publication_list %}
+    <ul>
+    {% for reference_publication in reference_publication_list %}
+        <li><a href="/data_management/reference_publications/{{ reference_publication.reference_publication_id }}/">{{ reference_publication }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No reference publications available.</p>
+{% endif %}
